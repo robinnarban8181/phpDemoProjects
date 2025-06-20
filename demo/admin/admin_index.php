@@ -22,31 +22,26 @@
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Mobile No</th>
-            <th>Address</th>
-            <th>Created Date</th>
-            <th>Action</th>
+             <th>Content</th>
             <th>Image</th>
+            <th>Position </th>
+         
 
           </tr>
         </thead>
         <tbody>
   <?php
-  $result = $conn->query("SELECT * FROM user");
+  $result = $conn->query("SELECT * FROM admin");
   while($row = $result->fetch_assoc()):
   ?>
   <tr>
     <td><?= $row['id'] ?></td>
     <td><?= $row['name'] ?></td>
-    <td><?= $row['email'] ?></td>
-    <td><?= $row['mobile'] ?></td>
-    <td><?= $row['address'] ?></td>
-    <td><?= $row['created_at'] ?></td>
-    <td class="text-center">
-      <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-primary">Edit</a>
-      <a href="delete.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this user?')">Delete</a>
-    </td>
+    <td><?= $row['content'] ?></td>
+    <td><?= $row['image'] ?></td>
+    <td><?= $row['position'] ?></td>
+  
+   
     <td class="text-center">
       <?php if (!empty($row['img'])): ?>
         <img src="uploads/<?= $row['img'] ?>" alt="User Image" class="img-thumbnail" style="width: 60px; height: 60px;">

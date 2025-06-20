@@ -17,7 +17,7 @@
             <h4>Add New User</h4>
           </div>
           <div class="card-body">
-            <form action="store.php" method="POST">
+            <form action="store.php" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
                 <input type="text" name="name" class="form-control" id="name" required>
@@ -38,6 +38,12 @@
                 <input type="text" name="address" class="form-control" id="address" required>
               </div>
 
+              <div class="mb-3">
+                <label for="img" class="form-label">Upload Image:</label>
+                <input type="file" name="img" class="form-control" accept="image/*">
+
+              </div>
+
               <div class="text-center">
                 <button type="submit" class="btn btn-success w-100">Save</button>
               </div>
@@ -48,7 +54,7 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS (Optional for interactive elements) -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
